@@ -1,7 +1,12 @@
 import Nav from '../components/nav'
+import { signIn, signOut, useSession } from 'next-auth/client'
+
 
 
 export default function IndexPage() {
+
+  const [ session, loading ] = useSession()
+
   return (
     <div>
       <Nav />
@@ -10,6 +15,18 @@ export default function IndexPage() {
           Teste de commit pelo VSCODE
         </h1>
       </div>
+      <>
+            {!session && <>
+            Not signed in <br/>
+            <button onClick={signIn}>Sign in</button>
+            </>}
+            {session && <>
+            Signed in as {session.user.email} <br/>
+            <button onClick={signOut}>Sign out</button>
+            </>}
+        </>
+
+
     </div>
   )
 }
