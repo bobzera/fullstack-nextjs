@@ -18,12 +18,16 @@ export default function IndexPage() {
       <>
             {!session && <>
             Not signed in <br/>
-            <button onClick={signIn}>Sign in</button>
+            <button onClick={() => signIn('auth0')}>Sign in</button>
             </>}
             {session && <>
             Signed in as {session.user.email} <br/>
             <button onClick={signOut}>Sign out</button>
             </>}
+            {/* //carregando statu */}
+            {loading && (
+              <h1 className="text-5xl">carregando</h1>
+            )}
         </>
 
 
