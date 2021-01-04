@@ -8,28 +8,28 @@ export default function Nav() {
   const [ session, loading ] = useSession()
 
   return (
-    <nav>
+    <nav className="bg-black">
       
-      <ul className="flex items-center justify-between p-8">
+      <ul className="flex flex-row gap-4 p-8">
         <li>
           <Link href="/coments">
-            <a className=" no-underline btn-blue text-white dark:text-blue-300 ">
+            <button className=" no-underline btn-blue text-white dark:text-blue-300 ">
              Comnetarios
-            </a>
+            </button>
           </Link>
         </li>
         <li>
           <Link href="/usuarios">
-            <a className=" no-underline btn-blue text-white dark:text-blue-300 ">
-             Usuarios
-            </a>
+            <button className=" no-underline btn-blue text-white dark:text-blue-300 ">
+            Usuarios
+            </button>
           </Link>
         </li>  
         <li>
           <Link href="/">
-            <a className=" no-underline btn-blue text-white dark:text-blue-300 ">
+            <button className=" no-underline btn-blue text-white dark:text-blue-300 ">
              voltar
-            </a>
+            </button>
           </Link>
         </li>       
         <li> 
@@ -46,7 +46,7 @@ export default function Nav() {
             </button>
             </>}         
         </li>
-        <li >      
+        <li>      
             
             {session && <>
               <div >

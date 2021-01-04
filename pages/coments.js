@@ -10,10 +10,12 @@ export default function Comments({ comments }) {
       <div className="px-20">
         <h1 className="text-4xl py-10">Comments</h1>
         <ul>
-          {comments.map((comment) => (
+          {comments.map((c) => (
             <li className="py-3">
-              <h2 className="text-2xl text-gray-900 dark:text-gray-100">{comment.name}</h2>
-              <p>{comment.text}</p>
+              <h2 className="text-2xl text-gray-900 dark:text-gray-100">{c.name}</h2>
+              <p className="text-4xl">{c.email}</p>
+              <p>{c.text}</p>
+              <p>{c.date}</p>
             </li>
           ))}
         </ul>
